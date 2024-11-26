@@ -44,6 +44,7 @@ public class Hanoi {
 
   			//resuelve le problema
 	solucion(nDiscos, 1, 2, 3);
+
     }
 
     /**
@@ -89,10 +90,12 @@ public class Hanoi {
     }
 
     public static void main (String [] pps) {
+        new HanoiGraphics().setVisible(true);
+        /*
 	if (pps.length != 0) 
 	    new Hanoi((new Integer(pps[0])).intValue());
 	else 
-	    new Hanoi(); 
+	    new Hanoi(); */
     }
 }
 
