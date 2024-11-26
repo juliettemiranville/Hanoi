@@ -22,7 +22,6 @@ public class Disco extends JComponent{
         this.setSize(nsize * 20, 20);
     }
     
-    
 
     public int getnSize() {
         return nsize;

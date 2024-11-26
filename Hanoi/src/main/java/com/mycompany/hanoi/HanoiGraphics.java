@@ -37,8 +37,6 @@ public class HanoiGraphics extends JFrame {
 
     }
     
-    
-    
     private JPanel getPanelForTower(int towerIndex) {
         return switch (towerIndex) {
             case 0 -> pTowerA;
@@ -58,8 +56,9 @@ public class HanoiGraphics extends JFrame {
     }
     
     private void initDiscos() {
-        int[] sizes = {3, 2, 1}; 
-        Color[] colors = {Color.RED, Color.GREEN, Color.BLUE}; 
+        int[] sizes = {5, 4, 3, 2, 1}; 
+        Color[] colors = {Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.CYAN}; 
+ 
 
         for (int i = 0; i < sizes.length; i++) {
             Disco disco = new Disco(sizes[i], colors[i]); 
@@ -102,10 +101,6 @@ public class HanoiGraphics extends JFrame {
         //String currentText = printArea.getText();
         printArea.setText(message + "\n"); // Ajoutez le message à la fin
     }
-
-
-
-
 
     
     /**
@@ -291,12 +286,12 @@ public class HanoiGraphics extends JFrame {
         
         String diskInput = txtDiscos.getText();
         if (diskInput.isEmpty()) {
-            appendMessage("Por favor, ingrese un número de disco.\n"); // Message d'erreur
+            appendMessage("Por favor, ingrese un número de disco.\n"); 
             return;
         }
         int diskToMove = Integer.parseInt(diskInput);
-        if (diskToMove < 1 || diskToMove > 3) {
-            appendMessage("El disco debe ser 1, 2 o 3.\n"); // Message d'erreur
+        if (diskToMove < 1 || diskToMove > 5) {
+            appendMessage("El disco debe ser entre 1 y 5.\n");
             return;
         }
         
@@ -363,7 +358,7 @@ public class HanoiGraphics extends JFrame {
     
     
     private boolean win(){
-        return tours[2].tamanio() == 3;
+        return tours[2].tamanio() == 5;
     }
     
     
